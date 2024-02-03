@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.dashboard.EmergenciaSOSFragment"
+        android:background="#12264B"
+        android:padding="25dp"
+>
+
+
+    <TextView
+            android:text="Emergencia - SOS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView2"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins"
+            android:textSize="34dp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:rotationX="-8"
+            android:layout_marginTop="40dp"/>
+    <TextView
+            android:text="Você está em uma emergência?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="30sp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" android:layout_marginTop="40dp"/>
+    <TextView
+            android:text="Ao clicar no botão abaixo você será redirecionado para nossa Assistência Técnica 24h.
+O Chame|Volks e MAN Service Assistência 24 horas tem a finalidade de prestar suporte técnico ao cliente ou usuário dos nossos produtos, em qualquer lugar do Brasil."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:fontFamily="@font/poppins"
+            android:padding="15dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+    />
+    <ImageView
+            android:src="@drawable/foneVolume"
+            android:layout_width="77dp"
+            android:layout_height="69dp" android:id="@+id/imageView8"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="106dp"
+            app:layout_constraintHorizontal_bias="0.0"/>
+    <TextView
+            android:text="Fale com a Volks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView5"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:background="@drawable/solid_underline"
+
+            app:layout_constraintStart_toEndOf="@+id/imageView8"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/textView4"
+            android:layout_marginTop="116dp" app:layout_constraintHorizontal_bias="0.454"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
