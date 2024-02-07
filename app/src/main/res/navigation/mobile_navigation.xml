@@ -23,9 +23,17 @@
             android:label="@string/menu_sos"
             tools:layout="@layout/fragment_emergencia_sos"/>
 
+<<<<<<< HEAD
 <!--    <fragment-->
 <!--            android:id="@+id/nav_perfil"-->
 <!--            android:name="com.example.mobile_volksway.views.PerfilFragment"-->
 <!--            android:label="@string/menu_perfil"-->
 <!--            tools:layout="@layout/fragment_perfil"/>-->
+=======
+    <fragment
+            android:id="@+id/navigation_notifications"
+            android:name="com.example.mobile_volksway.ui.notifications.NotificationsFragment"
+            android:label="@string/title_notifications"
+            tools:layout="@layout/fragment_checklist"/>
+>>>>>>> a0bc26ad95925e2cd439159320fa08e4a0ca23a0
 </navigation>
