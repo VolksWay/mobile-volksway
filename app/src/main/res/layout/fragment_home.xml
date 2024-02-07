@@ -5,19 +5,54 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.home.HomeFragment">
+        android:background="@color/azul_escuro"
+        tools:context=".views.HomeFragment">
 
-    <TextView
-            android:id="@+id/text_home"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:textAlignment="center"
-            android:textSize="20sp"
+    <ImageView
+            android:src="@drawable/logvolksway"
+            android:layout_width="131dp"
+            android:layout_height="71dp"
+            android:id="@+id/imageView8"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.153"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            android:layout_marginTop="32dp"/>
+    <TextView
+            android:text="Olá, Bom dia"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/white"
+            android:layout_width="122dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="44dp"
+            android:id="@+id/text_home"
+            app:layout_constraintTop_toBottomOf="@+id/imageView8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.089"/>
+    <TextView
+            android:text="Mario"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/white"
+            android:layout_width="49dp"
+            android:layout_height="21dp"
+            android:layout_marginTop="4dp"
+            android:id="@+id/campo_nome"
+            app:layout_constraintTop_toBottomOf="@+id/text_home"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.071"/>
+
+    <TextView
+            android:text="Ofertas para você"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/white"
+            android:layout_width="134dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="4dp"
+            android:id="@+id/titulo_ofertas"
+            app:layout_constraintTop_toBottomOf="@+id/campo_nome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.093"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
