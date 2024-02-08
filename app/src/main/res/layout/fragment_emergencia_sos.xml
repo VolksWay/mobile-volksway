@@ -26,7 +26,7 @@
             android:text="Você está em uma emergência?"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView3"
+            android:id="@+id/titulo_email"
             android:textColor="@color/white"
             android:fontFamily="@font/poppins_medium"
             android:textSize="30sp"
@@ -48,7 +48,7 @@ O Chame|Volks e MAN Service Assistência 24 horas tem a finalidade de prestar su
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/titulo_email"
     />
     <ImageView
             android:src="@drawable/fonevolume"
@@ -61,7 +61,7 @@ O Chame|Volks e MAN Service Assistência 24 horas tem a finalidade de prestar su
             android:text="Fale com a Volks"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView5"
+            android:id="@+id/titulo_senha"
             android:fontFamily="@font/poppins"
             android:textColor="@color/white"
             android:textSize="30dp"

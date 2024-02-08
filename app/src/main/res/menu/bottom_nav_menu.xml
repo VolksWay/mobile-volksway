@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+        <item
+                android:title="Home"
+                android:id="@+id/nav_home"
+                android:icon="@drawable/icone_home"
+
+        />
+
+<!--        <item-->
+<!--                android:title=""-->
+<!--                android:id="@+id/nav_checklist"-->
+<!--                android:icon="@drawable/icone_checklist"-->
+
+<!--        />-->
+
+        <item
+                android:title="SOS"
+                android:id="@+id/nav_sos"
+                android:icon="@drawable/icone_sos"
+        />
+<!--        <item-->
+<!--                android:title=""-->
+<!--                android:id="@+id/nav_perfil"-->
+<!--                android:icon="@drawable/icone_perfil"-->
+<!--                />-->
+
+
+
+
+
+
+</menu>
