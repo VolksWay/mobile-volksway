@@ -1,21 +1,25 @@
 package com.example.mobile_volksway
 
 
+import android.content.Intent
 import android.os.Bundle
 
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 
+
 import com.example.mobile_volksway.databinding.ActivityMainBinding
-import com.example.mobile_volksway.views.EmergenciaSOSFragment
-import com.example.mobile_volksway.views.HomeFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
 
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,34 +28,37 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        replaceFragment(HomeFragment())
+        setSupportActionBar(binding.appBarMain.toolbar)
 
-        binding.bottomNavView.setOnItemSelectedListener {
-            when(it.itemId){
+        //desabilita a exibiçao do titulo do nome da tela atual
+        supportActionBar?.setDisplayShowTitleEnabled(false)
 
-                R.id.nav_home -> replaceFragment(HomeFragment())
-//                R.id.nav_checklist -> replaceFragment(Checklist())
-                R.id.nav_sos -> replaceFragment(EmergenciaSOSFragment())
-//                R.id.nav_perfil -> replaceFragment(Perfil())
+        val drawerLayout: DrawerLayout = binding.drawerLayout
+        val navView: NavigationView = binding.navView
+        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations. (R.id.nav_host_fragment_content_main)
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.nav_home, R.id.nav_checklist, R.id.nav_sos, R.id.nav_perfil
+            ), drawerLayout
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
 
-                else -> {
-
-                }
-            }
-
+        navView.menu.findItem(R.id.nav_home).setOnMenuItemClickListener { menu ->
+            val mainIntent = Intent(this@MainActivity, LoginActivity::class.java)
+            startActivity(mainIntent)
+            finish()
             true
         }
 
-        }
-
-    private fun replaceFragment(fragment: Fragment){
-
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.frame_layout,fragment)
-        fragmentTransaction.commit()
-
-
 
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
 }
