@@ -112,7 +112,7 @@ private fun decodificarToken(token: String): Any {
     val payloadJson = String(payloadBytes, StandardCharsets.UTF_8)
 
     val json = JSONObject(payloadJson)
-    return json["idUsuario"].toString()
+    return json["id"].toString()
 }}
 
 
