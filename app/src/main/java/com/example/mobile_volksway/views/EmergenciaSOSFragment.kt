@@ -1,4 +1,4 @@
-package com.example.mobile_volksway.ui.dashboard
+package com.example.mobile_volksway.views
 
 import android.os.Bundle
 import android.view.LayoutInflater

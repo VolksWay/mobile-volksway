@@ -1,7 +1,17 @@
 <resources>
-    <string name="app_name">mobile-volksway</string>
+    <string name="app_name">volksway</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    //nomes das opcoes do menu de navegacao
     <string name="menu_home">Home</string>
-    <string name="menu_checklist"></string>
+    <string name="menu_checklist">Checklist</string>
     <string name="menu_sos">SOS</string>
-    <string name="menu_perfil"></string>
+    <string name="menu_perfil">Perfil</string>
+
+
 </resources>

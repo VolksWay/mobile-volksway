@@ -5,7 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.dashboard.EmergenciaSOSFragment"
+        tools:context=".views.EmergenciaSOSFragment"
         android:background="#12264B"
         android:padding="25dp"
 >
@@ -26,7 +26,7 @@
             android:text="Você está em uma emergência?"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView3"
+            android:id="@+id/titulo_email"
             android:textColor="@color/white"
             android:fontFamily="@font/poppins_medium"
             android:textSize="30sp"
@@ -48,20 +48,20 @@ O Chame|Volks e MAN Service Assistência 24 horas tem a finalidade de prestar su
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/titulo_email"
     />
     <ImageView
             android:src="@drawable/fonevolume"
             android:layout_width="77dp"
             android:layout_height="69dp" android:id="@+id/imageView8"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/textView4"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="106dp"
-            app:layout_constraintHorizontal_bias="0.0"/>
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="60dp"
+            app:layout_constraintHorizontal_bias="0.047"/>
     <TextView
             android:text="Fale com a Volks"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView5"
+            android:id="@+id/titulo_senha"
             android:fontFamily="@font/poppins"
             android:textColor="@color/white"
             android:textSize="30dp"
@@ -69,7 +69,7 @@ O Chame|Volks e MAN Service Assistência 24 horas tem a finalidade de prestar su
 
             app:layout_constraintStart_toEndOf="@+id/imageView8"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/textView4"
-            android:layout_marginTop="116dp" app:layout_constraintHorizontal_bias="0.454"/>
+            android:layout_marginTop="68dp" app:layout_constraintHorizontal_bias="0.381"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
