@@ -55,8 +55,8 @@ O Chame|Volks e MAN Service Assistência 24 horas tem a finalidade de prestar su
             android:layout_width="77dp"
             android:layout_height="69dp" android:id="@+id/imageView8"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/textView4"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="106dp"
-            app:layout_constraintHorizontal_bias="0.0"/>
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="60dp"
+            app:layout_constraintHorizontal_bias="0.047"/>
     <TextView
             android:text="Fale com a Volks"
             android:layout_width="wrap_content"
@@ -69,7 +69,7 @@ O Chame|Volks e MAN Service Assistência 24 horas tem a finalidade de prestar su
 
             app:layout_constraintStart_toEndOf="@+id/imageView8"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/textView4"
-            android:layout_marginTop="116dp" app:layout_constraintHorizontal_bias="0.454"/>
+            android:layout_marginTop="68dp" app:layout_constraintHorizontal_bias="0.381"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
