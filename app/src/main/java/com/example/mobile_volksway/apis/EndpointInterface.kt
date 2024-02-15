@@ -4,14 +4,9 @@ import com.google.gson.JsonObject
 import com.example.mobile_volksway.models.Login
 import com.example.mobile_volksway.models.Empresa
 import okhttp3.MultipartBody
+import okhttp3.ResponseBody
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Multipart
-import retrofit2.http.POST
-import retrofit2.http.PUT
-import retrofit2.http.Part
-import retrofit2.http.Path
+import retrofit2.http.*
 import java.util.UUID
 
 interface EndpointInterface {
@@ -34,4 +29,5 @@ interface EndpointInterface {
         @Part imagem: MultipartBody.Part,
         @Path(value = "idUsuario", encoded = true) idUsuario: UUID
     ) : Call<JsonObject>
+
 }
