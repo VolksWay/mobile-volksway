@@ -48,9 +48,9 @@ class LoginActivity : AppCompatActivity() {
 
         //setOnClickListener é um ouvinte de clique
         //Ou seja, quando clicar no botão entrar irá cair nesse bloco
-        // binding.btnEntrar.setOnClickListener {
-        //   autenticarUsuario()
-        // }
+        binding.btnEntrar.setOnClickListener {
+           autenticarUsuario()
+         }
         setContentView(binding.root)
 
     }
