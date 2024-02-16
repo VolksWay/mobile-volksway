@@ -30,4 +30,10 @@ interface EndpointInterface {
         @Path(value = "idUsuario", encoded = true) idUsuario: UUID
     ) : Call<JsonObject>
 
+    @Multipart
+    @POST("image")
+    fun analisarImagemPeneu(
+        @Part imagem: MultipartBody.Part,
+    ) : Call<JsonObject>
+
 }
