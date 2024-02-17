@@ -33,6 +33,7 @@ interface EndpointInterface {
     @Multipart
     @POST("image")
     fun analisarImagemPeneu(
+        @Header("Prediction-Key") predictionKey: String,
         @Part imagem: MultipartBody.Part,
     ) : Call<JsonObject>
 
