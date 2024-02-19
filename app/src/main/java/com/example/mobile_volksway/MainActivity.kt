@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-
+-
 <<<<<<< HEAD
     private fun setupCheckBoxListener() {
         myCheckBox.setOnCheckedChangeListener { buttonView, isChecked ->
