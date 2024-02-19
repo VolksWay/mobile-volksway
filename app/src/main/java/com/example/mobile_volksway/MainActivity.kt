@@ -3,13 +3,7 @@ package com.example.mobile_volksway
 
 import android.content.Intent
 import android.os.Bundle
-<<<<<<< HEAD
-import android.widget.CheckBox
-import android.widget.Toast
-import com.google.android.material.bottomnavigation.BottomNavigationView
-=======
 
->>>>>>> 4eb77d289bfe0a3880bafe3861b2c93754dd74b2
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
@@ -27,23 +21,13 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
-    private lateinit var myCheckBox: CheckBox
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-<<<<<<< HEAD
-        myCheckBox = binding.checkBox
-
-        setupCheckBoxListener()
-
-        val navView: BottomNavigationView = binding.navView
-
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        val appBarConfiguration = AppBarConfiguration(
-=======
         setSupportActionBar(binding.appBarMain.toolbar)
 
         //desabilita a exibiçao do titulo do nome da tela atual
@@ -55,7 +39,6 @@ class MainActivity : AppCompatActivity() {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations. (R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(
->>>>>>> 4eb77d289bfe0a3880bafe3861b2c93754dd74b2
             setOf(
                 R.id.nav_home, R.id.nav_checklist, R.id.nav_sos, R.id.nav_perfil
             ), drawerLayout
@@ -72,6 +55,7 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+<<<<<<< HEAD
 -
 <<<<<<< HEAD
     private fun setupCheckBoxListener() {
@@ -81,10 +65,12 @@ class MainActivity : AppCompatActivity() {
             } else {
                 Toast.makeTe
 =======
+=======
+
+>>>>>>> 2ede5e25d1b7be0234b052d9211d87a54e63baa0
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
 }
->>>>>>> 4eb77d289bfe0a3880bafe3861b2c93754dd74b2

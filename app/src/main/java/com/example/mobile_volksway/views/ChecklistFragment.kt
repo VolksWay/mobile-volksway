@@ -1,6 +1,7 @@
 package com.example.mobile_volksway.views
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -10,9 +11,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.mobile_volksway.MainActivity
 import com.google.gson.JsonObject
 import com.example.mobile_volksway.R
 import com.example.mobile_volksway.apis.EndpointInterface
@@ -28,7 +29,7 @@ import retrofit2.Response
 import java.io.File
 import java.io.FileOutputStream
 import java.io.InputStream
-class HomeFragment : Fragment() {
+class ChecklistFragment : Fragment() {
     private var _binding: FragmentChecklistBinding? = null
     private val binding get() = _binding!!
 
@@ -42,8 +43,6 @@ class HomeFragment : Fragment() {
 
     private val subscriptionKey = "4b14454a59cb4397b0c9dee26d28ee7b"
 
-    private lateinit var textViewResultado: TextView
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -51,7 +50,7 @@ class HomeFragment : Fragment() {
     ): View {
 
         _binding = FragmentChecklistBinding.inflate(inflater, container, false)
-        textViewResultado = binding.root.findViewById(R.id.textViewResultado)
+
         val root: View = binding.root
 
         val icone_camera = root.findViewById<ImageView>(R.id.camera)
@@ -108,7 +107,7 @@ class HomeFragment : Fragment() {
     }
 
 
-    private fun analisarImagem(imagem: Bitmap) {
+    private fun analisarImagem(imagem: Bitmap){
         // Criar um arquivo temporário para armazenar a imagem
         val file = File(requireContext().cacheDir, "temp_image.png")
         file.createNewFile()
@@ -122,47 +121,23 @@ class HomeFragment : Fragment() {
         val requestFile = RequestBody.create(MediaType.parse("image/*"), file)
         val imagemPart = MultipartBody.Part.createFormData("imagem", file.name, requestFile)
 
-        endpoints.analisarImagemPeneu(predictionKey = subscriptionKey, imagemPart).enqueue(object : Callback<JsonObject> {
+        endpoints.analisarImagemPeneu(predictionKey = subscriptionKey, imagemPart).enqueue(object : Callback<JsonObject>{
             override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
-                if (response.isSuccessful) {
-                    val predictions = response.body()?.getAsJsonArray("predictions")
-                    if (predictions != null) {
-                        var probabilidadeBoa = 0f
-                        var probabilidadeRuim = 0f
+                // Exibir mensagem de sucesso
+                //Toast.makeText(requireContext(), "Foto analisada com sucesso!!!", Toast.LENGTH_SHORT).show()
 
-                        for (prediction in predictions) {
-                            val probability = prediction.asJsonObject.get("probability").asFloat
-                            val tagName = prediction.asJsonObject.get("tagName").asString
-
-                            if (tagName == "Bom") {
-                                probabilidadeBoa = probability
-                            } else if (tagName == "Ruim") {
-                                probabilidadeRuim = probability
-                            }
-                        }
-
-                        val mensagem: String = when {
-                            probabilidadeBoa >= 0.8f -> "A foto é considerada boa com $probabilidadeBoa% de certeza."
-                            probabilidadeRuim >= 0.8f -> "A foto é considerada ruim com $probabilidadeRuim% de certeza."
-                            probabilidadeBoa < 0.7f -> "Não é possível concluir, pois a probabilidade de ser boa é de $probabilidadeBoa%."
-                            else -> "Não é possível concluir, pois a probabilidade de ser boa é de $probabilidadeBoa%."
-                        }
-
-                        textViewResultado.text = mensagem
-                        textViewResultado.visibility = View.VISIBLE
-
-                        Toast.makeText(requireContext(), mensagem, Toast.LENGTH_SHORT).show()
+                when(response.code()){
+                    200 -> {
+                        Toast.makeText(requireContext(), response.body().toString(), Toast.LENGTH_SHORT).show()
                     }
-                } else {
-                    // Se a resposta não for bem-sucedida, exibir uma mensagem de erro
-                    Toast.makeText(requireContext(), "Erro ao obter as previsões", Toast.LENGTH_SHORT).show()
                 }
             }
 
             override fun onFailure(call: Call<JsonObject>, t: Throwable) {
                 // Exibir mensagem de erro
-                Toast.makeText(requireContext(), "Erro ao analisar a imagem.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Erro ao analisada imagem.", Toast.LENGTH_SHORT).show()
             }
+
         })
     }
 

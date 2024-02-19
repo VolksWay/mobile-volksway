@@ -19,12 +19,10 @@
             android:textColor="@color/white"
             android:fontFamily="@font/poppins_medium"
             android:textSize="35sp"
-           app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-    />
-
-
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="645dp"/>
     <TextView
             android:text="Ar Condicionado"
             android:layout_width="wrap_content"
@@ -35,7 +33,7 @@
             android:textSize="25sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_checklist"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:layout_marginStart="10dp"/>
 
 
@@ -49,7 +47,7 @@
             android:textSize="25sp"
             app:layout_constraintTop_toBottomOf="@+id/text_Documentos"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:layout_marginStart="10dp"/>
 
     <TextView
@@ -61,7 +59,7 @@
             android:fontFamily="@font/poppins_medium"
             android:textSize="25sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_ar" android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_ar" android:layout_marginTop="30dp"
             android:layout_marginStart="10dp"/>
     <TextView
             android:text="Combustivel"
@@ -73,7 +71,7 @@
             android:textSize="25sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_Oleo"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="30dp"
             android:layout_marginStart="10dp"/>
     <TextView
             android:text="Oleo"
@@ -85,7 +83,7 @@
             android:textSize="25sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_Freios"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:layout_marginStart="10dp"/>
 
     <TextView
@@ -98,7 +96,7 @@
             android:textSize="25sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_Peneu"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="30dp"
             android:layout_marginStart="10dp"/>
 
     <TextView
@@ -110,7 +108,7 @@
             android:fontFamily="@font/poppins_medium"
             android:textSize="25sp"
             app:layout_constraintTop_toBottomOf="@+id/text_Combustivel"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="30dp"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="10dp"/>
 
@@ -119,11 +117,23 @@
             android:layout_width="57dp"
             android:layout_height="58dp"
             app:srcCompat="@drawable/camera"
-            android:id="@+id/imageView"
+            android:id="@+id/camera"
             app:layout_constraintTop_toBottomOf="@+id/text_Rota" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="32dp"
-            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="50dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="90dp"
             app:layout_constraintVertical_bias="0.508" android:layout_marginStart="10dp"/>
+    <TextView
+            android:id="@+id/textViewResultado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@id/camera"
+            app:layout_constraintTop_toTopOf="@id/camera"
+            app:layout_constraintBottom_toBottomOf="@id/camera"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
     <TextView
             android:text="Imagem do Pneus"
             android:layout_width="wrap_content"
@@ -133,9 +143,8 @@
             android:fontFamily="@font/poppins_medium"
             android:textSize="23sp"
             app:layout_constraintTop_toBottomOf="@+id/text_Rota"
-            android:layout_marginTop="92dp" app:layout_constraintStart_toEndOf="@+id/imageView"
-            android:layout_marginStart="8dp"
-    />
+            android:layout_marginTop="80dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="10dp"/>
     <CheckBox
 
             android:layout_width="wrap_content"
@@ -144,7 +153,7 @@
             app:layout_constraintStart_toEndOf="@+id/text_Freios"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.937" app:layout_constraintTop_toBottomOf="@+id/checkBox10"
-            android:layout_marginTop="32dp"/>
+            android:layout_marginTop="20dp"/>
     <CheckBox
 
             android:layout_width="wrap_content"
@@ -160,14 +169,14 @@
             android:id="@+id/checkBox5"
             app:layout_constraintStart_toEndOf="@+id/text_Combustivel"
             app:layout_constraintTop_toBottomOf="@+id/checkBox4" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.904" android:layout_marginTop="32dp"/>
+            app:layout_constraintHorizontal_bias="0.904" android:layout_marginTop="20dp"/>
     <CheckBox
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/checkBox6"
             app:layout_constraintStart_toEndOf="@+id/text_Peneu" app:layout_constraintTop_toBottomOf="@+id/checkBox5"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="20dp"
             app:layout_constraintHorizontal_bias="0.939"/>
     <CheckBox
 
@@ -175,7 +184,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/checkBox7"
             app:layout_constraintStart_toEndOf="@+id/text_Rota" app:layout_constraintTop_toBottomOf="@+id/checkBox6"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="48dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="20dp"
             app:layout_constraintHorizontal_bias="0.88"/>
     <CheckBox
 
@@ -184,7 +193,7 @@
             android:id="@+id/checkBox8"
             app:layout_constraintTop_toBottomOf="@+id/checkBox7" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginEnd="16dp"
-            app:layout_constraintVertical_bias="0.192" android:layout_marginTop="32dp"
+            app:layout_constraintVertical_bias="0.192" android:layout_marginTop="20dp"
             app:layout_constraintStart_toEndOf="@+id/text_ImagemPneu" app:layout_constraintHorizontal_bias="1.0"/>
     <CheckBox
 
@@ -193,7 +202,7 @@
             android:id="@+id/checkBox9"
             app:layout_constraintTop_toBottomOf="@+id/text_checklist"
             app:layout_constraintStart_toEndOf="@+id/text_ar" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="40dp" app:layout_constraintHorizontal_bias="0.859"/>
+            android:layout_marginTop="20dp" app:layout_constraintHorizontal_bias="0.859"/>
     <CheckBox
 
             android:layout_width="wrap_content"
@@ -201,7 +210,7 @@
             android:id="@+id/checkBox10"
             app:layout_constraintStart_toEndOf="@+id/text_Documentos" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.903"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox9" android:layout_marginTop="32dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/checkBox9" android:layout_marginTop="20dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

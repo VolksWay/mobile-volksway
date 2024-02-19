@@ -13,5 +13,6 @@
     <string name="menu_sos">SOS</string>
     <string name="menu_perfil">Perfil</string>
 
-
+    <string name="escolher_imagem">Escolher imagem</string>
+    <string name="capturar_imagem">Capturar imagem</string>
 </resources>
