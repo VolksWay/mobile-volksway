@@ -55,7 +55,19 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+<<<<<<< HEAD
+-
+<<<<<<< HEAD
+    private fun setupCheckBoxListener() {
+        myCheckBox.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+                Toast.makeText(this@MainActivity, "Caixa de seleção marcada", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeTe
+=======
+=======
 
+>>>>>>> 2ede5e25d1b7be0234b052d9211d87a54e63baa0
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
