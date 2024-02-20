@@ -83,21 +83,8 @@
             android:textSize="25sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_Freios"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="10dp"/>
+            android:layout_marginStart="10dp" android:layout_marginTop="30dp"/>
 
-    <TextView
-            android:text="Rota Completa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/text_Rota"
-            android:textColor="@color/white"
-            android:fontFamily="@font/poppins_medium"
-            android:textSize="25sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_Peneu"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="10dp"/>
 
     <TextView
             android:text="Pneu"
@@ -108,20 +95,19 @@
             android:fontFamily="@font/poppins_medium"
             android:textSize="25sp"
             app:layout_constraintTop_toBottomOf="@+id/text_Combustivel"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="52dp"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="10dp"/>
-
-
     <ImageView
             android:layout_width="57dp"
             android:layout_height="58dp"
             app:srcCompat="@drawable/camera"
             android:id="@+id/camera"
-            app:layout_constraintTop_toBottomOf="@+id/text_Rota" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="10dp"
-            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="90dp"
-            app:layout_constraintVertical_bias="0.508" android:layout_marginStart="10dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/checkBox5" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="30dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="208dp"
+            app:layout_constraintVertical_bias="0.508" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.954"/>
     <TextView
             android:id="@+id/textViewResultado"
             android:layout_width="wrap_content"
@@ -134,17 +120,6 @@
             app:layout_constraintBottom_toBottomOf="@id/camera"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"/>
-    <TextView
-            android:text="Imagem do Pneus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/text_ImagemPneu"
-            android:textColor="@color/white"
-            android:fontFamily="@font/poppins_medium"
-            android:textSize="23sp"
-            app:layout_constraintTop_toBottomOf="@+id/text_Rota"
-            android:layout_marginTop="80dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="10dp"/>
     <CheckBox
 
             android:layout_width="wrap_content"
@@ -152,16 +127,16 @@
             android:id="@+id/checkBox3"
             app:layout_constraintStart_toEndOf="@+id/text_Freios"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.937" app:layout_constraintTop_toBottomOf="@+id/checkBox10"
-            android:layout_marginTop="20dp"/>
+            app:layout_constraintHorizontal_bias="0.938" app:layout_constraintTop_toBottomOf="@+id/checkBox10"
+            android:layout_marginTop="32dp"/>
     <CheckBox
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/checkBox4"
             app:layout_constraintTop_toBottomOf="@+id/checkBox3"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="20dp"
-            app:layout_constraintStart_toEndOf="@+id/text_Oleo" app:layout_constraintHorizontal_bias="0.94"/>
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="28dp"
+            app:layout_constraintStart_toEndOf="@+id/text_Oleo" app:layout_constraintHorizontal_bias="0.942"/>
     <CheckBox
 
             android:layout_width="wrap_content"
@@ -169,32 +144,7 @@
             android:id="@+id/checkBox5"
             app:layout_constraintStart_toEndOf="@+id/text_Combustivel"
             app:layout_constraintTop_toBottomOf="@+id/checkBox4" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.904" android:layout_marginTop="20dp"/>
-    <CheckBox
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/checkBox6"
-            app:layout_constraintStart_toEndOf="@+id/text_Peneu" app:layout_constraintTop_toBottomOf="@+id/checkBox5"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="20dp"
-            app:layout_constraintHorizontal_bias="0.939"/>
-    <CheckBox
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/checkBox7"
-            app:layout_constraintStart_toEndOf="@+id/text_Rota" app:layout_constraintTop_toBottomOf="@+id/checkBox6"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="20dp"
-            app:layout_constraintHorizontal_bias="0.88"/>
-    <CheckBox
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/checkBox8"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox7" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginEnd="16dp"
-            app:layout_constraintVertical_bias="0.192" android:layout_marginTop="20dp"
-            app:layout_constraintStart_toEndOf="@+id/text_ImagemPneu" app:layout_constraintHorizontal_bias="1.0"/>
+            app:layout_constraintHorizontal_bias="0.904" android:layout_marginTop="15dp"/>
     <CheckBox
 
             android:layout_width="wrap_content"
@@ -210,7 +160,6 @@
             android:id="@+id/checkBox10"
             app:layout_constraintStart_toEndOf="@+id/text_Documentos" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.903"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox9" android:layout_marginTop="20dp"/>
-
+            app:layout_constraintTop_toBottomOf="@+id/checkBox9" android:layout_marginTop="30dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

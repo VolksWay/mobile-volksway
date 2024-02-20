@@ -1,10 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" project-jdk-name="Android API 34, extension level 10 Platform" project-jdk-type="Android SDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_18_PREVIEW" project-jdk-name="Android API 34, extension level 10 Platform" project-jdk-type="Android SDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
     <option name="id" value="jpab" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+<<<<<<< HEAD
+        <option name="scale" value="0.20436083796494228" />
+=======
+        <option name="scale" value="0.264" />
+>>>>>>> 2ede5e25d1b7be0234b052d9211d87a54e63baa0
+      </ProjectState>
+    </option>
   </component>
 </project>
