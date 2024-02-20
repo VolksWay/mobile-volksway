@@ -38,7 +38,8 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val clienteRetrofit = RetrofitConfig.obterAzureIA()
-
+    private val clienteRetrofitJava = RetrofitConfig.obterInstanciaRetrofit()
+    private val endpointsJava = clienteRetrofitJava.create(EndpointInterface::class.java)
     private val endpoints = clienteRetrofit.create(EndpointInterface::class.java)
 
     private val IMAGEM_REQUEST_CODE = 123
@@ -46,6 +47,7 @@ class HomeFragment : Fragment() {
     private val subscriptionKey = "4b14454a59cb4397b0c9dee26d28ee7b"
 
     private lateinit var textViewResultado: TextView
+    private lateinit var textViewChecklist: TextView
     private lateinit var arCondicionadoCampo: CheckBox
     private lateinit var documentosCampo: CheckBox
     private lateinit var freioCampo: CheckBox
@@ -60,6 +62,7 @@ class HomeFragment : Fragment() {
 
         _binding = FragmentChecklistBinding.inflate(inflater, container, false)
         textViewResultado = binding.root.findViewById(R.id.textViewResultado)
+        textViewChecklist = binding.root.findViewById(R.id.textViewChecklist)
         val root: View = binding.root
         val sharedPreferences = requireContext().getSharedPreferences("idUsuario", Context.MODE_PRIVATE)
 
@@ -67,15 +70,15 @@ class HomeFragment : Fragment() {
 
         val icone_camera = root.findViewById<ImageView>(R.id.camera)
 
-        val arCondicionadoCampo = root.findViewById<CheckBox>(R.id.checkBox9)
+        arCondicionadoCampo = root.findViewById<CheckBox>(R.id.checkBox9)
 
-        val documentosCampo = root.findViewById<CheckBox>(R.id.checkBox10)
+        documentosCampo = root.findViewById<CheckBox>(R.id.checkBox10)
 
-        val freioCampo = root.findViewById<CheckBox>(R.id.checkBox3)
+        freioCampo = root.findViewById<CheckBox>(R.id.checkBox3)
 
-        val oleoCampo = root.findViewById<CheckBox>(R.id.checkBox4)
+        oleoCampo = root.findViewById<CheckBox>(R.id.checkBox4)
 
-        val combustivelCampo = root.findViewById<CheckBox>(R.id.checkBox5)
+        combustivelCampo = root.findViewById<CheckBox>(R.id.checkBox5)
 
         icone_camera.setOnClickListener {
             mostrarOpcoesEscolhaImagem()
@@ -128,7 +131,7 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun realizarChecklist(imagem: MultipartBody.Part){
+    private fun realizarChecklist(imagem: Bitmap, qualidade: String){
         var combustivel = false
 
         if(combustivelCampo.isChecked){
@@ -168,14 +171,30 @@ class HomeFragment : Fragment() {
             oleo = false
         }
 
-        endpoints.cadastrarChecklist(imagem, freio = RequestBody.create(MediaType.parse("text/plain"), freio.toString()), combustivel = RequestBody.create(MediaType.parse("text/plain"), combustivel.toString()), oleo = RequestBody.create(MediaType.parse("text/plain"), oleo.toString()), arCondicionado = RequestBody.create(MediaType.parse("text/plain"), arCondicionado.toString()), idUsuario = RequestBody.create(MediaType.parse("text/plain"), idUsuario.toString()), estadoPneu = RequestBody.create(MediaType.parse("text/plain"), "Bom"))
+        val file = File(requireContext().cacheDir, "temp_image.png")
+        file.createNewFile()
+
+        // Salvar a imagem Bitmap no arquivo temporário
+        val outputStream = FileOutputStream(file)
+        imagem.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
+        outputStream.close()
+
+        // Criar partes Multipart para a imagem
+        val requestFile = RequestBody.create(MediaType.parse("image/*"), file)
+        val imagemPart = MultipartBody.Part.createFormData("imagem", file.name, requestFile)
+
+        endpointsJava.cadastrarChecklist(imagemPart, RequestBody.create(MediaType.parse("text/plain"), freio.toString()), RequestBody.create(MediaType.parse("text/plain"), combustivel.toString()),RequestBody.create(MediaType.parse("text/plain"), oleo.toString()), RequestBody.create(MediaType.parse("text/plain"), arCondicionado.toString()), RequestBody.create(MediaType.parse("text/plain"), idUsuario.toString()), RequestBody.create(MediaType.parse("text/plain"), qualidade))
             .enqueue(object : Callback<JsonObject> {
                 override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
                     if (response.isSuccessful) {
                         Toast.makeText(requireContext(), "Funcionou", Toast.LENGTH_SHORT).show()
+
+                        textViewChecklist.text = "Checklist Feito"
+                        textViewChecklist.visibility = View.VISIBLE
                     } else {
                         // Se a resposta não for bem-sucedida, exibir uma mensagem de erro
-                        Toast.makeText(requireContext(), "Erro ao obter as previsões", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Erro ao cadastrar", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), response.toString(), Toast.LENGTH_SHORT).show()
                     }
                 }
 
@@ -228,9 +247,16 @@ class HomeFragment : Fragment() {
                                 else -> "Não é possível concluir, probabilidade de ser boa é de $probabilidadeBoa%."
                             }
 
+                            val qualidade: String = when {
+                                probabilidadeBoa >= 0.8f -> "Bom"
+                                probabilidadeRuim >= 0.8f -> "Ruim"
+                                probabilidadeBoa < 0.7f -> "Indeterminado"
+                                else -> "Indeterminado"
+                            }
+
                             textViewResultado.text = mensagem
                             textViewResultado.visibility = View.VISIBLE
-                            realizarChecklist(imagemPart)
+                            realizarChecklist(imagem, qualidade)
                             //Toast.makeText(requireContext(), mensagem, Toast.LENGTH_SHORT).show()
                         }
                     } else {

@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class RetrofitConfig {
     companion object{
 
-        fun obterInstanciaRetrofit(url: String = "http://172.16.52.110:8099/") : Retrofit{
+        fun obterInstanciaRetrofit(url: String = "http://172.16.24.173:8099/") : Retrofit{
 
             return Retrofit.Builder()
                 .baseUrl(url)

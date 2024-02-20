@@ -121,7 +121,7 @@ class ChecklistFragment : Fragment() {
         val requestFile = RequestBody.create(MediaType.parse("image/*"), file)
         val imagemPart = MultipartBody.Part.createFormData("imagem", file.name, requestFile)
 
-        endpoints.analisarImagemPeneu(predictionKey = subscriptionKey, imagemPart).enqueue(object : Callback<JsonObject>{
+        endpoints.analisarImagemPneu(predictionKey = subscriptionKey, imagemPart).enqueue(object : Callback<JsonObject>{
             override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
                 // Exibir mensagem de sucesso
                 //Toast.makeText(requireContext(), "Foto analisada com sucesso!!!", Toast.LENGTH_SHORT).show()

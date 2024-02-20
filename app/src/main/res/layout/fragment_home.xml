@@ -63,25 +63,12 @@
             android:layout_marginTop="25dp" app:layout_constraintBottom_toTopOf="@+id/scrollView2"/>
 
     <ScrollView
-<<<<<<< HEAD
-
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent">
-=======
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:fillViewport="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="204dp"
-            android:layout_marginTop="300dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="1.0" android:id="@+id/scrollView2">
->>>>>>> 0a28d7bc0ab5b3d86201baa573f9a8326f72edb5
 
         <LinearLayout
                 android:orientation="vertical"
