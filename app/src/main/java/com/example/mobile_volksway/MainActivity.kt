@@ -3,6 +3,7 @@ package com.example.mobile_volksway
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
@@ -55,19 +56,17 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-<<<<<<< HEAD
--
-<<<<<<< HEAD
-    private fun setupCheckBoxListener() {
-        myCheckBox.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked) {
-                Toast.makeText(this@MainActivity, "Caixa de seleção marcada", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeTe
-=======
-=======
 
->>>>>>> 2ede5e25d1b7be0234b052d9211d87a54e63baa0
+//    private fun setupCheckBoxListener() {
+//        myCheckBox.setOnCheckedChangeListener { buttonView, isChecked ->
+//            if (isChecked) {
+//                Toast.makeText(this@MainActivity, "Caixa de seleção marcada", Toast.LENGTH_SHORT).show()
+//            } else {
+////                Toast.makeText
+//            }
+//        }
+//    }
+
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
