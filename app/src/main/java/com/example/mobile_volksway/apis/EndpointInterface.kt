@@ -46,8 +46,8 @@ interface EndpointInterface {
         @Part("freio") freio: RequestBody,
         @Part("combustivel") combustivel: RequestBody,
         @Part("oleo") oleo: RequestBody,
-        @Part("ar_condicionado") arCondicionado: RequestBody,
-        @Part("id_usuario") idUsuario: RequestBody,
-        @Part("estado_pneu") estadoPneu: RequestBody
+        @Part("ar_condicionado") ar_condicionado: RequestBody,
+        @Part("id_usuario") id_usuario: RequestBody,
+        @Part("estado_pneu") estado_pneu: RequestBody
     ) : Call<JsonObject>
 }

@@ -70,15 +70,15 @@ class HomeFragment : Fragment() {
 
         val icone_camera = root.findViewById<ImageView>(R.id.camera)
 
-        arCondicionadoCampo = root.findViewById<CheckBox>(R.id.checkBox9)
+        arCondicionadoCampo = root.findViewById<CheckBox>(R.id.ckbArCondicionado)
 
-        documentosCampo = root.findViewById<CheckBox>(R.id.checkBox10)
+        documentosCampo = root.findViewById<CheckBox>(R.id.ckbDocumentos)
 
-        freioCampo = root.findViewById<CheckBox>(R.id.checkBox3)
+        freioCampo = root.findViewById<CheckBox>(R.id.ckbFreios)
 
-        oleoCampo = root.findViewById<CheckBox>(R.id.checkBox4)
+        oleoCampo = root.findViewById<CheckBox>(R.id.cbkOleo)
 
-        combustivelCampo = root.findViewById<CheckBox>(R.id.checkBox5)
+        combustivelCampo = root.findViewById<CheckBox>(R.id.ckbCombustivel)
 
         icone_camera.setOnClickListener {
             mostrarOpcoesEscolhaImagem()
@@ -132,7 +132,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun realizarChecklist(imagem: Bitmap, qualidade: String){
-        var combustivel = false
+        var combustivel: Boolean
 
         if(combustivelCampo.isChecked){
             combustivel = true
@@ -140,7 +140,7 @@ class HomeFragment : Fragment() {
             combustivel = false
         }
 
-        var arCondicionado = false
+        var arCondicionado: Boolean
 
         if(arCondicionadoCampo.isChecked){
             arCondicionado = true
@@ -148,7 +148,7 @@ class HomeFragment : Fragment() {
             arCondicionado = false
         }
 
-        var documentos = false
+        var documentos: Boolean
 
         if(documentosCampo.isChecked){
             documentos = true
@@ -156,7 +156,7 @@ class HomeFragment : Fragment() {
             documentos = false
         }
 
-        var freio = false
+        var freio: Boolean
 
         if(freioCampo.isChecked){
             freio = true
@@ -164,7 +164,7 @@ class HomeFragment : Fragment() {
             freio = false
         }
 
-        var oleo = false
+        var oleo: Boolean
         if(oleoCampo.isChecked){
             oleo = true
         } else {
@@ -181,9 +181,9 @@ class HomeFragment : Fragment() {
 
         // Criar partes Multipart para a imagem
         val requestFile = RequestBody.create(MediaType.parse("image/*"), file)
-        val imagemPart = MultipartBody.Part.createFormData("imagem", file.name, requestFile)
+        val imagemPart = MultipartBody.Part.createFormData("foto_pneu", file.name, requestFile)
 
-        endpointsJava.cadastrarChecklist(imagemPart, RequestBody.create(MediaType.parse("text/plain"), freio.toString()), RequestBody.create(MediaType.parse("text/plain"), combustivel.toString()),RequestBody.create(MediaType.parse("text/plain"), oleo.toString()), RequestBody.create(MediaType.parse("text/plain"), arCondicionado.toString()), RequestBody.create(MediaType.parse("text/plain"), idUsuario.toString()), RequestBody.create(MediaType.parse("text/plain"), qualidade))
+        endpointsJava.cadastrarChecklist(imagemPart, freio = RequestBody.create(MediaType.parse("text/plain"), freio.toString()), combustivel = RequestBody.create(MediaType.parse("text/plain"), combustivel.toString()), oleo = RequestBody.create(MediaType.parse("text/plain"), oleo.toString()), ar_condicionado =  RequestBody.create(MediaType.parse("text/plain"), arCondicionado.toString()), id_usuario =  RequestBody.create(MediaType.parse("text/plain"), idUsuario.toString()), estado_pneu =  RequestBody.create(MediaType.parse("text/plain"), qualidade))
             .enqueue(object : Callback<JsonObject> {
                 override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
                     if (response.isSuccessful) {
@@ -195,6 +195,8 @@ class HomeFragment : Fragment() {
                         // Se a resposta não for bem-sucedida, exibir uma mensagem de erro
                         Toast.makeText(requireContext(), "Erro ao cadastrar", Toast.LENGTH_SHORT).show()
                         Toast.makeText(requireContext(), response.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), imagem.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), freio.toString(), Toast.LENGTH_SHORT).show()
                     }
                 }
 
