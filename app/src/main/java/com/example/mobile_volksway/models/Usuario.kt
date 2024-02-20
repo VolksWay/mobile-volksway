@@ -2,8 +2,8 @@ package com.example.mobile_volksway.models
 
 import java.util.*
 
-class Usuario {
-   /* val id: UUID,
+class Usuario (
+    val id: UUID,
     val nome: String,
     val telefone: String,
     val email: String,
@@ -12,6 +12,6 @@ class Usuario {
     val cidade: String,
     val cpf: String,
     val tipo_usuario: String,
-    val img: String, */
-}
+    val img: String,
+)
 
