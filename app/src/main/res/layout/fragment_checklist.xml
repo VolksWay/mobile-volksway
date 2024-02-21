@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         android:background="#12264B"
         android:padding="25dp"
-
+        tools:context=".views.ChecklistFragment"
 >
     <TextView
             android:text="Checklist"
@@ -212,7 +212,7 @@
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
             android:textSize="20sp"
-
+            android:visibility="gone"
             android:textColorHint="@color/branco"
             app:layout_constraintTop_toBottomOf="@+id/lnPneu" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
@@ -223,7 +223,7 @@
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
             android:textSize="20sp"
-
+            android:visibility="gone"
             android:textColorHint="@color/branco"
             app:layout_constraintTop_toBottomOf="@+id/textViewResultado" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>

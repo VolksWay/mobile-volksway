@@ -3,7 +3,6 @@ package com.example.mobile_volksway
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
@@ -41,13 +40,13 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations. (R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_checklist, R.id.nav_sos, R.id.nav_perfil
+                R.id.nav_home, R.id.nav_checklist, R.id.nav_sos, R.id.nav_sair
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        navView.menu.findItem(R.id.nav_home).setOnMenuItemClickListener { menu ->
+        navView.menu.findItem(R.id.nav_sair).setOnMenuItemClickListener { menu ->
             val mainIntent = Intent(this@MainActivity, LoginActivity::class.java)
             startActivity(mainIntent)
             finish()

@@ -20,7 +20,7 @@
             android:layout_marginTop="20dp" android:textSize="32sp" android:id="@+id/textView"/>
     <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" app:srcCompat="@drawable/logvolksway" android:id="@+id/imageView"
+            android:layout_height="wrap_content" app:srcCompat="@drawable/volksway_logo" android:id="@+id/imageView"
             app:layout_constraintTop_toBottomOf="@+id/textView" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="11dp"
             app:layout_constraintHorizontal_bias="0.498"/>
@@ -38,6 +38,7 @@
             android:layout_height="35dp"
             android:inputType="textEmailAddress"
             android:ems="10"
+            android:text="teste@gmail.com"
             android:id="@+id/campo_email"
             app:layout_constraintTop_toBottomOf="@+id/titulo_email" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
@@ -51,6 +52,7 @@
             app:layout_constraintTop_toBottomOf="@+id/campo_email" android:layout_marginTop="32dp"
             app:layout_constraintHorizontal_bias="0.0"/>
     <EditText
+            android:text="teste123"
             android:background="@drawable/style_card"
             android:layout_width="match_parent"
             android:layout_height="35dp"
