@@ -46,7 +46,12 @@ class LoginActivity : AppCompatActivity() {
         //setOnClickListener é um ouvinte de clique
         //Ou seja, quando clicar no botão entrar irá cair nesse bloco
         binding.btnEntrar.setOnClickListener {
-            autenticarUsuario()
+      //      autenticarUsuario()
+            val mainIntent = Intent(this@LoginActivity, MainActivity::class.java)
+
+            startActivity(mainIntent)
+
+            finish()
         }
         setContentView(binding.root)
 
@@ -79,11 +84,7 @@ class LoginActivity : AppCompatActivity() {
                         editor.apply()
 
                         //direcionando o usuário para tela lista de serviços
-                        val mainIntent = Intent(this@LoginActivity, MainActivity::class.java)
 
-                        startActivity(mainIntent)
-
-                        finish()
                     }
                     403 -> { tratarFalhaNaAutenticacao(resposta.toString()) }
                     else -> { tratarFalhaNaAutenticacao(resposta.toString()) }
