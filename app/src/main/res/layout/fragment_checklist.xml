@@ -228,16 +228,4 @@
             app:layout_constraintTop_toBottomOf="@+id/textViewResultado" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
 
-    <Button
-            android:layout_marginTop="25dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Enviar checklist"
-            android:padding="15dp"
-            android:paddingHorizontal="20dp"
-            android:textColor="@color/azul_escuro"
-            android:backgroundTint="@color/amarelo"
-            app:layout_constraintTop_toBottomOf="@+id/textViewResultado" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
