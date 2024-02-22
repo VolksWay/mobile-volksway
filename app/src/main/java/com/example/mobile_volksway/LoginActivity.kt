@@ -46,7 +46,7 @@ class LoginActivity : AppCompatActivity() {
         //setOnClickListener é um ouvinte de clique
         //Ou seja, quando clicar no botão entrar irá cair nesse bloco
         binding.btnEntrar.setOnClickListener {
-      //      autenticarUsuario()
+            autenticarUsuario()
             val mainIntent = Intent(this@LoginActivity, MainActivity::class.java)
 
             startActivity(mainIntent)
