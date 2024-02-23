@@ -87,7 +87,6 @@ class LoginActivity : AppCompatActivity() {
 
                     }
                     403 -> { tratarFalhaNaAutenticacao(resposta.toString()) }
-                    else -> { tratarFalhaNaAutenticacao(resposta.toString()) }
                 }
             }
 
